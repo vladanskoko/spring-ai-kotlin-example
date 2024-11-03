@@ -12,7 +12,15 @@ import org.springframework.web.bind.annotation.RestController
 class ChatController(private val chatClientBuilder: ChatClient.Builder) {
 
     @GetMapping("/generate")
-    fun generate(@RequestParam(defaultValue = "write greetings message") message: String): ChatResponse {
+    fun generateResponse(@RequestParam(defaultValue = "write greetings message") message: String): String {
+        return chatClientBuilder.build()
+            .prompt(message)
+            .call()
+            .content()
+    }
+
+    @GetMapping("/generate-json")
+    fun generateJsonResponse(@RequestParam(defaultValue = "write greetings message") message: String): ChatResponse {
         return chatClientBuilder.build()
             .prompt(message)
             .call()
