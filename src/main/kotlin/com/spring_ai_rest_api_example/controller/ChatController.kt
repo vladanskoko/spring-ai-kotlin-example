@@ -1,6 +1,6 @@
 package com.spring_ai_rest_api_example.controller
 
-import org.springframework.ai.chat.client.ChatClient
+import com.spring_ai_rest_api_example.service.ChatService
 import org.springframework.ai.chat.model.ChatResponse
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -9,22 +9,16 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/api/chat")
-class ChatController(private val chatClientBuilder: ChatClient.Builder) {
+class ChatController(private val chatService: ChatService) {
 
     @GetMapping("/generate")
-    fun generateResponse(@RequestParam(defaultValue = "write greetings message") message: String): String {
-        return chatClientBuilder.build()
-            .prompt(message)
-            .call()
-            .content()
+    fun generateResponse(@RequestParam(defaultValue = "write greetings message") query: String): String {
+        return chatService.generateResponse(query)
     }
 
     @GetMapping("/generate-json")
-    fun generateJsonResponse(@RequestParam(defaultValue = "write greetings message") message: String): ChatResponse {
-        return chatClientBuilder.build()
-            .prompt(message)
-            .call()
-            .chatResponse()
+    fun generateJsonResponse(@RequestParam(defaultValue = "write greetings message") query: String): ChatResponse {
+        return chatService.generateJsonResponse(query)
     }
 
 }
