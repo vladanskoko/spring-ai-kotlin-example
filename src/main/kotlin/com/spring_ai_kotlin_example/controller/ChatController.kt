@@ -1,6 +1,6 @@
-package com.spring_ai_rest_api_example.controller
+package com.spring_ai_kotlin_example.controller
 
-import com.spring_ai_rest_api_example.service.ChatService
+import com.spring_ai_kotlin_example.service.ChatService
 import org.springframework.ai.chat.model.ChatResponse
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping

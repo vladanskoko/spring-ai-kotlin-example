@@ -1,13 +1,14 @@
-package com.spring_ai_rest_api_example
+package com.spring_ai_kotlin_example
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class SpringAiRestApiExampleApplicationTests {
+class SpringAiKotlinExampleApplicationTests {
 
 	@Test
 	fun contextLoads() {
 	}
 
 }
+

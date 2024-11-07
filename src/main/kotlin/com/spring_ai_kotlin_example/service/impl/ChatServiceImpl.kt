@@ -1,6 +1,6 @@
-package com.spring_ai_rest_api_example.service.impl
+package com.spring_ai_kotlin_example.service.impl
 
-import com.spring_ai_rest_api_example.service.ChatService
+import com.spring_ai_kotlin_example.service.ChatService
 import org.springframework.ai.chat.client.ChatClient
 import org.springframework.ai.chat.model.ChatResponse
 import org.springframework.stereotype.Service

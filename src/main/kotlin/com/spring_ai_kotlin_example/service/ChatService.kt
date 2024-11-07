@@ -1,4 +1,4 @@
-package com.spring_ai_rest_api_example.service
+package com.spring_ai_kotlin_example.service
 
 import org.springframework.ai.chat.model.ChatResponse
 
