@@ -21,4 +21,9 @@ class ChatController(private val chatService: ChatService) {
         return chatService.generateJsonResponse(query)
     }
 
+    @GetMapping("/songs")
+    fun getSongsByArtist(@RequestParam(defaultValue = "Michael Jackson") artist: String): String {
+        return chatService.getSongsByArtist(artist)
+    }
+
 }

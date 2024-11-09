@@ -6,5 +6,6 @@ interface ChatService {
 
     fun generateResponse(query: String): String
     fun generateJsonResponse(query: String): ChatResponse
+    fun getSongsByArtist(artist: String): String
 
 }
